@@ -5,7 +5,7 @@
 %global lib_dir %{buildroot}%{python2_sitelib}/%{pypi_name}/plugins/bigswitch
 
 Name:           python-%{rpm_name}
-Version:        2015.1.40
+Version:        2015.1.41
 Release:        1%{?dist}
 Summary:        Big Switch Networks neutron plugin for OpenStack Networking
 License:        ASL 2.0
@@ -116,6 +116,8 @@ done
 %systemd_postun_with_restart neutron-bsn-lldp.service
 
 %changelog
+* Sat Nov 18 2015 Xin Wu <xin.wu@bigswitch.com> - 2015.1.41-1
+- Support new router workflow.
 * Sat Oct 17 2015 Xin Wu <xin.wu@bigswitch.com> - 2015.1.40-1
 - Bug fix.
 * Wed Oct 14 2015 Xin Wu <xin.wu@bigswitch.com> - 2015.1.39-1
