@@ -5,7 +5,7 @@
 %global lib_dir %{buildroot}%{python2_sitelib}/%{pypi_name}/plugins/bigswitch
 
 Name:           python-%{rpm_name}
-Version:        2015.2.3
+Version:        2015.2.4
 Release:        1%{?dist}
 Summary:        Big Switch Networks neutron plugin for OpenStack Networking
 License:        ASL 2.0
@@ -21,7 +21,7 @@ BuildRequires:  python-setuptools
 BuildRequires:  python-sphinx
 BuildRequires:  systemd-units
 
-Requires:       openstack-neutron >= 2015.1
+Requires:       openstack-neutron >= 7.0.0
 Requires:       python-pbr >= 0.10.8
 Requires:       python-oslo-log >= 1.0.0
 Requires:       python-oslo-config >= 2:1.9.3
@@ -39,7 +39,7 @@ neutron plugins and agents
 
 %package -n %{rpm_prefix}-agent
 Summary:        Neutron Big Switch Networks agent
-Requires:       openstack-neutron-common >= 2015.1.0
+Requires:       openstack-neutron-common >= 7.0.0
 Requires:       python-%{rpm_name} = %{version}-%{release}
 
 %description -n %{rpm_prefix}-agent
@@ -116,19 +116,21 @@ done
 %systemd_postun_with_restart neutron-bsn-lldp.service
 
 %changelog
-* Sat Nov 26 2015 Xin Wu <xin.wu@bigswitch.com> - 2015.2.3-1
+* Wed Dec 09 2015 Xin Wu <xin.wu@bigswitch.com> - 2015.2.4-1
+- Match kilo v2 2015.1.44. Update dependency to openstack-neutron 7.0.0
+* Thu Nov 26 2015 Xin Wu <xin.wu@bigswitch.com> - 2015.2.3-1
 - Match kilo v2 2015.1.44.
-* Sat Nov 24 2015 Xin Wu <xin.wu@bigswitch.com> - 2015.2.2-1
+* Tue Nov 24 2015 Xin Wu <xin.wu@bigswitch.com> - 2015.2.2-1
 - Match kilo v2 2015.1.43.
 * Sat Nov 21 2015 Xin Wu <xin.wu@bigswitch.com> - 2015.2.1-1
 - Support kilo v1 api.
-* Sat Nov 18 2015 Xin Wu <xin.wu@bigswitch.com> - 2015.1.41-1
+* Wed Nov 18 2015 Xin Wu <xin.wu@bigswitch.com> - 2015.1.41-1
 - Support new router workflow.
 * Sat Oct 17 2015 Xin Wu <xin.wu@bigswitch.com> - 2015.1.40-1
 - Bug fix.
 * Wed Oct 14 2015 Xin Wu <xin.wu@bigswitch.com> - 2015.1.39-1
 - Bug fix with service dependencies.
-* Fri Sep 17 2015 Xin Wu <xin.wu@bigswitch.com> - 2015.1.38-1
+* Thu Sep 17 2015 Xin Wu <xin.wu@bigswitch.com> - 2015.1.38-1
 - Bug fix with security groups.
 * Fri Aug 14 2015 Xin Wu <xin.wu@bigswitch.com> - 2015.1.37-1
 - Initial package.
