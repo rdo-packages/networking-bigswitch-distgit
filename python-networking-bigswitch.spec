@@ -21,7 +21,7 @@ BuildRequires:  python-setuptools
 BuildRequires:  python-sphinx
 BuildRequires:  systemd-units
 
-Requires:       openstack-neutron >= 7.0.0
+Requires:       openstack-neutron
 Requires:       python-pbr >= 0.10.8
 Requires:       python-oslo-log >= 1.0.0
 Requires:       python-oslo-config >= 2:1.9.3
