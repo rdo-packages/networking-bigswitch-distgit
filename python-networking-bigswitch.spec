@@ -5,7 +5,7 @@
 %global lib_dir %{buildroot}%{python2_sitelib}/%{pypi_name}/plugins/bigswitch
 
 Name:           python-%{rpm_name}
-Version:        2015.2.9
+Version:        2015.2.10
 Release:        1%{?dist}
 Summary:        Big Switch Networks neutron plugin for OpenStack Networking
 License:        ASL 2.0
@@ -39,7 +39,6 @@ neutron plugins and agents
 
 %package -n %{rpm_prefix}-agent
 Summary:        Neutron Big Switch Networks agent
-Requires:       python-neutron
 Requires:       python-%{rpm_name} = %{version}-%{release}
 
 %description -n %{rpm_prefix}-agent
@@ -116,6 +115,8 @@ done
 %systemd_postun_with_restart neutron-bsn-lldp.service
 
 %changelog
+* Fri Jan 08 2016 Xin Wu <xin.wu@bigswitch.com> - 2015.2.10-1
+- Match kilo v2 2015.1.45. Fix neutron dependency
 * Thu Jan 07 2016 Xin Wu <xin.wu@bigswitch.com> - 2015.2.9-1
 - Match kilo v2 2015.1.45. Fix neutron dependency
 * Wed Jan 06 2016 Xin Wu <xin.wu@bigswitch.com> - 2015.2.8-1
