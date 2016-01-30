@@ -21,7 +21,7 @@ BuildRequires:  python-setuptools
 BuildRequires:  python-sphinx
 BuildRequires:  systemd-units
 
-Requires:       openstack-neutron >= 2015.1
+Requires:       openstack-neutron-common >= 1:7.0.0
 Requires:       python-pbr >= 0.10.8
 Requires:       python-oslo-log >= 1.0.0
 Requires:       python-oslo-config >= 2:1.9.3
@@ -39,7 +39,6 @@ neutron plugins and agents
 
 %package -n %{rpm_prefix}-agent
 Summary:        Neutron Big Switch Networks agent
-Requires:       openstack-neutron-common >= 2015.1.0
 Requires:       python-%{rpm_name} = %{version}-%{release}
 
 %description -n %{rpm_prefix}-agent
