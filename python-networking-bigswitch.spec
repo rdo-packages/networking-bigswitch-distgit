@@ -5,7 +5,7 @@
 %global lib_dir %{buildroot}%{python2_sitelib}/%{pypi_name}/plugins/bigswitch
 
 Name:           python-%{rpm_name}
-Version:        2015.1.48
+Version:        2015.3.1
 Release:        1%{?dist}
 Summary:        Big Switch Networks neutron plugin for OpenStack Networking
 License:        ASL 2.0
@@ -114,6 +114,8 @@ done
 %systemd_postun_with_restart neutron-bsn-lldp.service
 
 %changelog
+* Mon Feb 01 2016 Xin Wu <xin.wu@bigswitch.com> - 2015.3.1-1
+- Fix auth_url for liberty.
 * Fri Jan 29 2016 Xin Wu <xin.wu@bigswitch.com> - 2015.1.48-1
 - Use kilo v2 2015.1.48. Remove dependency on keystone configuration
 * Thu Jan 28 2016 Xin Wu <xin.wu@bigswitch.com> - 2015.1.47-1
