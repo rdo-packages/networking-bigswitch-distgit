@@ -5,7 +5,7 @@
 %global lib_dir %{buildroot}%{python2_sitelib}/%{pypi_name}/plugins/bigswitch
 
 Name:           python-%{rpm_name}
-Version:        2015.3.4
+Version:        2015.3.5
 Release:        1%{?dist}
 Summary:        Big Switch Networks neutron plugin for OpenStack Networking
 License:        ASL 2.0
@@ -115,8 +115,10 @@ done
 %systemd_postun_with_restart neutron-bsn-lldp.service
 
 %changelog
+* Mon Mar 7 2016 Xin Wu <xin.wu@bigswitch.com> - 2015.3.5-1
+- Use liberty 2015.3.5. Add missing policy json file
 * Mon Mar 7 2016 Xin Wu <xin.wu@bigswitch.com> - 2015.3.4-1
-- Use liberty 2015.3.4. Add missing policy json file
+- Use mitaka 2015.3.4. Add missing policy json file
 * Wed Feb 10 2016 Xin Wu <xin.wu@bigswitch.com> - 2015.3.3-1
 - Use liberty 2015.3.3. Always use iptables for sg
 * Wed Feb 10 2016 Xin Wu <xin.wu@bigswitch.com> - 2015.1.51-1
