@@ -87,11 +87,13 @@ done
 %{python2_sitelib}/%{pypi_name}
 %{python2_sitelib}/*.egg-info
 
+%config %{_sysconfdir}/neutron/policy.d/bsn_plugin_policy.json
+
 %files -n %{rpm_prefix}-agent
 %license LICENSE
 %{_unitdir}/neutron-bsn-agent.service
 %{_bindir}/neutron-bsn-agent
-%dir /etc/neutron/conf.d/neutron-bsn-agent
+%dir %{_sysconfdir}/neutron/conf.d/neutron-bsn-agent
 
 %files -n %{rpm_prefix}-lldp
 %license LICENSE
