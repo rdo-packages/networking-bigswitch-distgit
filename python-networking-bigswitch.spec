@@ -5,7 +5,7 @@
 %global lib_dir %{buildroot}%{python2_sitelib}/%{pypi_name}/plugins/bigswitch
 
 Name:           python-%{rpm_name}
-Version:        2015.3.7
+Version:        2015.3.8
 Release:        1%{?dist}
 Summary:        Big Switch Networks neutron plugin for OpenStack Networking
 License:        ASL 2.0
@@ -85,13 +85,13 @@ done
 %{python2_sitelib}/%{pypi_name}
 %{python2_sitelib}/%{pypi_name}-%{version}-py?.?.egg-info
 
-%config /etc/neutron/policy.d/bsn_plugin_policy.json
+%config %{_sysconfdir}/neutron/policy.d/bsn_plugin_policy.json
 
 %files -n %{rpm_prefix}-agent
 %license LICENSE
 %{_unitdir}/neutron-bsn-agent.service
 %{_bindir}/neutron-bsn-agent
-%dir /etc/neutron/conf.d/neutron-bsn-agent
+%dir %{_sysconfdir}/neutron/conf.d/neutron-bsn-agent
 
 %files -n %{rpm_prefix}-lldp
 %license LICENSE
@@ -116,6 +116,8 @@ done
 %systemd_postun_with_restart neutron-bsn-lldp.service
 
 %changelog
+* Tue Mar 8 2016 Xin Wu <xin.wu@bigswitch.com> - 2015.3.8-1
+- Use liberty 2015.3.8. Use config instead of file
 * Mon Mar 7 2016 Xin Wu <xin.wu@bigswitch.com> - 2015.3.7-1
 - Use liberty 2015.3.7. Use config instead of file
 * Mon Mar 7 2016 Xin Wu <xin.wu@bigswitch.com> - 2015.3.6-1
