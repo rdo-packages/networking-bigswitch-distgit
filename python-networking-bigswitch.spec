@@ -5,7 +5,7 @@
 %global lib_dir %{buildroot}%{python2_sitelib}/%{pypi_name}/plugins/bigswitch
 
 Name:           python-%{rpm_name}
-Version:        2015.3.6
+Version:        2015.1.52
 Release:        1%{?dist}
 Summary:        Big Switch Networks neutron plugin for OpenStack Networking
 License:        ASL 2.0
@@ -84,7 +84,6 @@ done
 %license LICENSE
 %{python2_sitelib}/%{pypi_name}
 %{python2_sitelib}/%{pypi_name}-%{version}-py?.?.egg-info
-/etc/neutron/policy.d/bsn_plugin_policy.json
 
 %files -n %{rpm_prefix}-agent
 %license LICENSE
@@ -115,6 +114,8 @@ done
 %systemd_postun_with_restart neutron-bsn-lldp.service
 
 %changelog
+* Mon Mar 7 2016 Xin Wu <xin.wu@bigswitch.com> - 2015.1.52-1
+- Use kilo 2015.1.52. Don't sync if keystone auth failssss
 * Mon Mar 7 2016 Xin Wu <xin.wu@bigswitch.com> - 2015.3.6-1
 - Use liberty 2015.3.6. Add missing policy json file
 * Mon Mar 7 2016 Xin Wu <xin.wu@bigswitch.com> - 2015.3.5-1
