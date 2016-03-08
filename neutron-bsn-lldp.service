@@ -1,7 +1,6 @@
 [Unit]
 Description=bsn lldp
-Wants=network-online.target
-After=syslog.target network.target network-online.target
+After=syslog.target network.target
 [Service]
 Type=simple
 ExecStart=/usr/bin/bsnlldp
