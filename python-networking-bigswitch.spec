@@ -5,7 +5,7 @@
 %global lib_dir %{buildroot}%{python2_sitelib}/%{pypi_name}/plugins/bigswitch
 
 Name:           python-%{rpm_name}
-Version:        2015.3.8
+Version:        2015.1.52
 Release:        1%{?dist}
 Summary:        Big Switch Networks neutron plugin for OpenStack Networking
 License:        ASL 2.0
@@ -116,6 +116,8 @@ done
 %systemd_postun_with_restart neutron-bsn-lldp.service
 
 %changelog
+* Tue Mar 8 2016 Xin Wu <xin.wu@bigswitch.com> - 2015.3.8-1
+- Use kilo v2 2015.1.52. Don't send lldp until all uplinks are up
 * Tue Mar 8 2016 Xin Wu <xin.wu@bigswitch.com> - 2015.3.8-1
 - Use liberty 2015.3.8. Use config instead of file
 * Mon Mar 7 2016 Xin Wu <xin.wu@bigswitch.com> - 2015.3.7-1
