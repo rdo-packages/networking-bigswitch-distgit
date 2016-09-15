@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "facab960_136c339c",
+        "filename": "python-networking-bigswitch.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 113
+      },
+      "writtenOn": "2016-09-15T10:30:49Z",
+      "side": 1,
+      "message": "There is no https://tarballs.openstack.org/bsnstacklib . We have http://tarballs.openstack.org/networking-bigswitch/ but there\u0027s only one release per branch (master, stable-mitaka, and so on).\n\nNot sure if we should use pypi.io or another source for this :-/",
+      "range": {
+        "startLine": 14,
+        "startChar": 15,
+        "endLine": 14,
+        "endChar": 90
+      },
+      "revId": "c5dc4d0307641fc8f69ec4851a3f050faf69502f",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
