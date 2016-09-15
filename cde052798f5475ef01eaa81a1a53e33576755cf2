@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "facab960_d3f80bc7",
+        "filename": "python-networking-bigswitch.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 113
+      },
+      "writtenOn": "2016-09-15T10:35:59Z",
+      "side": 1,
+      "message": "upstream-version? Not sure if it should be used, given the release situation",
+      "range": {
+        "startLine": 15,
+        "startChar": 74,
+        "endLine": 15,
+        "endChar": 82
+      },
+      "revId": "cde052798f5475ef01eaa81a1a53e33576755cf2",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
