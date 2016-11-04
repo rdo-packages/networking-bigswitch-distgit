@@ -6,8 +6,8 @@
 %global lib_dir %{buildroot}%{python2_sitelib}/%{pypi_name}/plugins/bigswitch
 
 Name:           python-%{rpm_name}
-Version:        XXX
-Release:        XXX
+Version:        7.0.0
+Release:        1%{?dist}
 Epoch:          1
 Summary:        Big Switch Networks neutron plugin for OpenStack Networking
 License:        ASL 2.0
@@ -119,6 +119,9 @@ done
 %systemd_postun_with_restart neutron-bsn-lldp.service
 
 %changelog
+* Fri Nov 04 2016 Jon Schlueter <jschluet@redhat.com> 1:7.0.0-1
+- Update to 7.0.0
+
 
 
 
