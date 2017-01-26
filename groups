@@ -1,6 +1,6 @@
 # UUID                                  	Group Name
 #
 3387e0eafc76a0699a2ad64892b348e63a9d8ce0	openstack/networking-bigswitch-distgit-ptl
-e6e60eb59ae7a99d09f97b9f6ca0bf1054ee13cc	openstack/networking-bigswitch-distgit-core
 63673ea7f2ae6a5666566b1ea9f14e473d00f5a9	rdo-core
+e6e60eb59ae7a99d09f97b9f6ca0bf1054ee13cc	openstack/networking-bigswitch-distgit-core
 global:Registered-Users                 	Registered Users
