@@ -120,5 +120,3 @@ done
 
 %changelog
 
-
-
