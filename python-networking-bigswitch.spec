@@ -1,18 +1,18 @@
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
-%global pypi_name bsnstacklib
-%global rpm_name networking-bigswitch
+%global pypi_name networking-bigswitch
+%global module_name networking_bigswitch
 %global rpm_prefix openstack-neutron-bigswitch
 %global docpath doc/build/html
-%global lib_dir %{buildroot}%{python2_sitelib}/%{pypi_name}/plugins/bigswitch
+%global lib_dir %{buildroot}%{python2_sitelib}/%{module_name}/plugins/bigswitch
 
-Name:           python-%{rpm_name}
+Name:           python-%{pypi_name}
 Epoch:          1
-Version:        XXX
-Release:        XXX
+Version:        9.40.5
+Release:        1%{?dist}
 Summary:        Big Switch Networks neutron plugin for OpenStack Networking
 License:        ASL 2.0
 URL:            https://pypi.python.org/pypi/%{pypi_name}
-Source0:        https://pypi.io/packages/source/b/%{pypi_name}/%{pypi_name}-%{upstream_version}.tar.gz
+Source0:        https://pypi.io/packages/source/n/%{pypi_name}/%{pypi_name}-%{upstream_version}.tar.gz
 Source1:        neutron-bsn-agent.service
 Source2:        neutron-bsn-lldp.service
 BuildArch:      noarch
@@ -41,7 +41,7 @@ neutron plugins and agents
 
 %package -n %{rpm_prefix}-agent
 Summary:        Neutron Big Switch Networks agent
-Requires:       python-%{rpm_name} = %{epoch}:%{version}-%{release}
+Requires:       python-%{pypi_name} = %{epoch}:%{version}-%{release}
 
 %description -n %{rpm_prefix}-agent
 This package contains the Big Switch Networks
@@ -49,7 +49,7 @@ neutron agent for security groups.
 
 %package -n %{rpm_prefix}-lldp
 Summary:        Neutron Big Switch Networks LLDP service
-Requires:       python-%{rpm_name} = %{epoch}:%{version}-%{release}
+Requires:       python-%{pypi_name} = %{epoch}:%{version}-%{release}
 
 %description -n %{rpm_prefix}-lldp
 This package contains the Big Switch Networks neutron LLDP agent.
@@ -85,7 +85,7 @@ done
 
 %files
 %license LICENSE
-%{python2_sitelib}/%{pypi_name}
+%{python2_sitelib}/%{module_name}
 %{python2_sitelib}/*.egg-info
 
 %config %{_sysconfdir}/neutron/policy.d/bsn_plugin_policy.json
@@ -119,6 +119,7 @@ done
 %systemd_postun_with_restart neutron-bsn-lldp.service
 
 %changelog
-
-
-
+* Thu Mar 23 2017 Aditya Vaja <aditya.vaja@bigswitch.com> - 9.40.5
+- OSP-51: add/remove router_interface transaction hack
+- OSP-50: make amends for rename tenant to project
+- OSP-21: rename bsnstacklib to networking_bigswitch
