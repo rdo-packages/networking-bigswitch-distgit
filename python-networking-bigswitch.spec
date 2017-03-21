@@ -1,11 +1,11 @@
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
-%global pypi_name bsnstacklib
-%global rpm_name networking-bigswitch
+%global pypi_name networking-bigswitch
+%global module_name networking_bigswitch
 %global rpm_prefix openstack-neutron-bigswitch
 %global docpath doc/build/html
-%global lib_dir %{buildroot}%{python2_sitelib}/%{pypi_name}/plugins/bigswitch
+%global lib_dir %{buildroot}%{python2_sitelib}/%{module_name}/plugins/bigswitch
 
-Name:           python-%{rpm_name}
+Name:           python-%{pypi_name}
 Epoch:          1
 Version:        XXX
 Release:        XXX
@@ -41,7 +41,7 @@ neutron plugins and agents
 
 %package -n %{rpm_prefix}-agent
 Summary:        Neutron Big Switch Networks agent
-Requires:       python-%{rpm_name} = %{epoch}:%{version}-%{release}
+Requires:       python-%{pypi_name} = %{epoch}:%{version}-%{release}
 
 %description -n %{rpm_prefix}-agent
 This package contains the Big Switch Networks
@@ -49,7 +49,7 @@ neutron agent for security groups.
 
 %package -n %{rpm_prefix}-lldp
 Summary:        Neutron Big Switch Networks LLDP service
-Requires:       python-%{rpm_name} = %{epoch}:%{version}-%{release}
+Requires:       python-%{pypi_name} = %{epoch}:%{version}-%{release}
 
 %description -n %{rpm_prefix}-lldp
 This package contains the Big Switch Networks neutron LLDP agent.
@@ -85,7 +85,7 @@ done
 
 %files
 %license LICENSE
-%{python2_sitelib}/%{pypi_name}
+%{python2_sitelib}/%{module_name}
 %{python2_sitelib}/*.egg-info
 
 %config %{_sysconfdir}/neutron/policy.d/bsn_plugin_policy.json
