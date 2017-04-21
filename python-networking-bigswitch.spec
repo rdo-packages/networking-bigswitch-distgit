@@ -6,7 +6,7 @@
 %global lib_dir %{buildroot}%{python2_sitelib}/%{module_name}/plugins/bigswitch
 
 Name:           python-%{pypi_name}
-Epoch:          1
+Epoch:          2
 Version:        9.40.5
 Release:        1%{?dist}
 Summary:        Big Switch Networks neutron plugin for OpenStack Networking
