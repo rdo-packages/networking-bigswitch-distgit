@@ -7,8 +7,8 @@
 
 Name:           python-%{pypi_name}
 Epoch:          2
-Version:        XXX
-Release:        XXX
+Version:        11.0.0
+Release:        1%{?dist}
 Summary:        Big Switch Networks neutron plugin for OpenStack Networking
 License:        ASL 2.0
 URL:            https://pypi.python.org/pypi/%{pypi_name}
@@ -119,6 +119,9 @@ done
 %systemd_postun_with_restart neutron-bsn-lldp.service
 
 %changelog
+* Wed Aug 30 2017 Haikel Guemar <hguemar@fedoraproject.org> 2:11.0.0-1
+- Update to 11.0.0
+
 
 
 
