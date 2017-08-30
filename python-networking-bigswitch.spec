@@ -12,7 +12,7 @@ Release:        XXX
 Summary:        Big Switch Networks neutron plugin for OpenStack Networking
 License:        ASL 2.0
 URL:            https://pypi.python.org/pypi/%{pypi_name}
-Source0:        https://pypi.io/packages/source/b/%{pypi_name}/%{pypi_name}-%{upstream_version}.tar.gz
+Source0:        https://pypi.io/packages/source/n/%{pypi_name}/%{pypi_name}-%{upstream_version}.tar.gz
 Source1:        neutron-bsn-agent.service
 Source2:        neutron-bsn-lldp.service
 BuildArch:      noarch
