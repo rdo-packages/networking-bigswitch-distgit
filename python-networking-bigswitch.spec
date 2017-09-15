@@ -31,9 +31,7 @@ Requires:       python-oslo-utils >= 1.4.0
 Requires:       python-oslo-messaging >= 1.8.0
 Requires:       python-oslo-serialization >= 1.4.0
 
-Requires(post):   systemd
-Requires(preun):  systemd
-Requires(postun): systemd
+%{?systemd_requires}
 
 %description
 This package contains Big Switch Networks
