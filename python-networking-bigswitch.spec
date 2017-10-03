@@ -5,6 +5,8 @@
 %global docpath doc/build/html
 %global lib_dir %{buildroot}%{python2_sitelib}/%{module_name}/plugins/bigswitch
 
+%global common_desc This package contains the Big Switch Networks Neutron plugins and agents
+
 Name:           python-%{pypi_name}
 Epoch:          2
 Version:        XXX
@@ -34,23 +36,26 @@ Requires:       python-oslo-serialization >= 1.4.0
 %{?systemd_requires}
 
 %description
-This package contains Big Switch Networks
-neutron plugins and agents
+%{common_desc}
+
 
 %package -n %{rpm_prefix}-agent
 Summary:        Neutron Big Switch Networks agent
 Requires:       python-%{pypi_name} = %{epoch}:%{version}-%{release}
 
 %description -n %{rpm_prefix}-agent
-This package contains the Big Switch Networks
-neutron agent for security groups.
+%{common_desc}
+
+This package contains the agent for security groups.
 
 %package -n %{rpm_prefix}-lldp
 Summary:        Neutron Big Switch Networks LLDP service
 Requires:       python-%{pypi_name} = %{epoch}:%{version}-%{release}
 
 %description -n %{rpm_prefix}-lldp
-This package contains the Big Switch Networks neutron LLDP agent.
+%{common_desc}
+
+This package contains the LLDP agent.
 
 %package doc
 Summary:        Neutron Big Switch Networks plugin documentation
