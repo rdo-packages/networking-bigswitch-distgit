@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa81d914_c4cd925f",
+        "filename": "python-networking-bigswitch.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 424
+      },
+      "writtenOn": "2017-10-03T09:25:21Z",
+      "side": 1,
+      "message": "This is wrong, main description should be:\n\nThis package contains the Big Switch Networks Neutron plugins and agents",
+      "range": {
+        "startLine": 9,
+        "startChar": 1,
+        "endLine": 9,
+        "endChar": 45
+      },
+      "revId": "f29662e1e90e0367c9a7d9291af4086de373cd71",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_04d88a1c",
+        "filename": "python-networking-bigswitch.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 424
+      },
+      "writtenOn": "2017-10-03T09:25:21Z",
+      "side": 1,
+      "message": "then remove this line",
+      "range": {
+        "startLine": 41,
+        "startChar": 0,
+        "endLine": 41,
+        "endChar": 26
+      },
+      "revId": "f29662e1e90e0367c9a7d9291af4086de373cd71",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_4409a294",
+        "filename": "python-networking-bigswitch.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 424
+      },
+      "writtenOn": "2017-10-03T09:25:21Z",
+      "side": 1,
+      "message": "On a new, separate line:\n\nThis package contains the agent for security groups",
+      "range": {
+        "startLine": 49,
+        "startChar": 0,
+        "endLine": 49,
+        "endChar": 34
+      },
+      "revId": "f29662e1e90e0367c9a7d9291af4086de373cd71",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_64fea66d",
+        "filename": "python-networking-bigswitch.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 424
+      },
+      "writtenOn": "2017-10-03T09:25:21Z",
+      "side": 1,
+      "message": "On a new separate line:\n\nThis package contains the LLDP agent",
+      "range": {
+        "startLine": 57,
+        "startChar": 0,
+        "endLine": 57,
+        "endChar": 19
+      },
+      "revId": "f29662e1e90e0367c9a7d9291af4086de373cd71",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
