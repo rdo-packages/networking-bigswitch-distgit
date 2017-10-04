@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa81d914_11aa8b70",
+        "filename": "python-networking-bigswitch.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 424
+      },
+      "writtenOn": "2017-10-04T10:22:44Z",
+      "side": 1,
+      "message": "Also this one needs updating with common_desc and the subpackage description below it.",
+      "range": {
+        "startLine": 64,
+        "startChar": 0,
+        "endLine": 65,
+        "endChar": 36
+      },
+      "revId": "5dae593d99c9b5dfa42d9eb647f6f44ffb1e9e6b",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
