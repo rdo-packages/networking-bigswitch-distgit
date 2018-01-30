@@ -25,7 +25,7 @@ BuildRequires:  python-devel
 BuildRequires:  python-pbr
 BuildRequires:  python-setuptools
 BuildRequires:  python-sphinx
-BuildRequires:  systemd-units
+BuildRequires:  systemd
 
 Requires:       openstack-neutron-common >= 1:7.0.0
 Requires:       python-pbr >= 0.10.8
