@@ -21,19 +21,19 @@ Source1:        neutron-bsn-agent.service
 Source2:        neutron-bsn-lldp.service
 BuildArch:      noarch
 
-BuildRequires:  python-devel
-BuildRequires:  python-pbr
-BuildRequires:  python-setuptools
-BuildRequires:  python-sphinx
+BuildRequires:  python2-devel
+BuildRequires:  python2-pbr
+BuildRequires:  python2-setuptools
+BuildRequires:  python2-sphinx
 BuildRequires:  systemd
 
 Requires:       openstack-neutron-common >= 1:7.0.0
-Requires:       python-pbr >= 0.10.8
-Requires:       python-oslo-log >= 1.0.0
-Requires:       python-oslo-config >= 2:1.9.3
-Requires:       python-oslo-utils >= 1.4.0
-Requires:       python-oslo-messaging >= 1.8.0
-Requires:       python-oslo-serialization >= 1.4.0
+Requires:       python2-pbr >= 0.10.8
+Requires:       python2-oslo-log >= 1.0.0
+Requires:       python2-oslo-config >= 2:1.9.3
+Requires:       python2-oslo-utils >= 1.4.0
+Requires:       python2-oslo-messaging >= 1.8.0
+Requires:       python2-oslo-serialization >= 1.4.0
 
 %{?systemd_requires}
 
