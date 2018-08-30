@@ -139,3 +139,4 @@ done
 
 
 
+# REMOVEME: error caused by commit http://git.openstack.org/cgit/openstack/networking-bigswitch/commit/?id=4b750450e6e9159998145ac319f3806c6b27e372
