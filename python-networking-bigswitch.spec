@@ -2,8 +2,6 @@
 %global pypi_name networking-bigswitch
 %global module_name networking_bigswitch
 %global rpm_prefix openstack-neutron-bigswitch
-%global os_vif_plugin_name vif-plug-ivs
-%global os_vif_plugin_name_underscore vif_plug_ivs
 %global docpath doc/build/html
 %global lib_dir %{buildroot}%{python2_sitelib}/%{module_name}/plugins/bigswitch
 
@@ -11,7 +9,7 @@
 
 Name:           python-%{pypi_name}
 Epoch:          2
-Version:        12.0.2
+Version:        12.0.4
 Release:        1%{?dist}
 Summary:        Big Switch Networks neutron plugin for OpenStack Networking
 License:        ASL 2.0
@@ -58,13 +56,6 @@ Requires:       python-%{pypi_name} = %{epoch}:%{version}-%{release}
 %{common_desc}
 
 This package contains the LLDP agent.
-
-%package -n %{rpm_prefix}-%{os_vif_plugin_name}
-Summary:        Neutron Big Switch Networks os-vif plugin for IVS
-Requires:       python-%{pypi_name} = %{epoch}:%{version}-%{release}
-
-%description -n %{rpm_prefix}-%{os_vif_plugin_name}
-This package contains the Big Switch Networks os-vif plugin for IVS
 
 %package doc
 Summary:        Neutron Big Switch Networks plugin documentation
@@ -114,10 +105,6 @@ done
 %{_unitdir}/neutron-bsn-lldp.service
 %{_bindir}/bsnlldp
 
-%files -n %{rpm_prefix}-%{os_vif_plugin_name}
-%license LICENSE
-%{python2_sitelib}/%{os_vif_plugin_name_underscore}/*
-
 %files doc
 %license LICENSE
 %doc README.rst
@@ -136,6 +123,10 @@ done
 %systemd_postun_with_restart neutron-bsn-lldp.service
 
 %changelog
+* Fri Aug 31 2018 Aditya Prakash Vaja <wolverine.av@gmail.com> 2:12.0.4-1
+- Revert OSP-119: move ivs port plug/unplug to separate os-vif plugin
+* Sat Aug 11 2018 Aditya Prakash Vaja <wolverine.av@gmail.com> 2:12.0.3-1
+- OSP-184: update lldp script and plugin to support ovs-dpdk
 * Thu Feb 22 2018 RDO <dev@lists.rdoproject.org> 2:12.0.2-1
 - Update to 12.0.2
 
