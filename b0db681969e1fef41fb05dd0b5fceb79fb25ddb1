@@ -22,6 +22,30 @@
       "revId": "b0db681969e1fef41fb05dd0b5fceb79fb25ddb1",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abe1de1_8b37f4af",
+        "filename": "python-networking-bigswitch.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 306
+      },
+      "writtenOn": "2018-08-31T14:52:37Z",
+      "side": 1,
+      "message": "oh, i didn\u0027t realize version string is manually updated here.\ni thought this was a general comment on the PR and not on a particular line. my bad.\ni\u0027ll push with the update.",
+      "parentUuid": "9abe1de1_707ecde5",
+      "range": {
+        "startLine": 12,
+        "startChar": 16,
+        "endLine": 12,
+        "endChar": 22
+      },
+      "revId": "b0db681969e1fef41fb05dd0b5fceb79fb25ddb1",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
     }
   ]
 }
