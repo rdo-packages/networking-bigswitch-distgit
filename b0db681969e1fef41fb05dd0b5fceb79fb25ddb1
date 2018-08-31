@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9abe1de1_707ecde5",
+        "filename": "python-networking-bigswitch.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 403
+      },
+      "writtenOn": "2018-08-31T03:41:53Z",
+      "side": 1,
+      "message": "The commit https://github.com/openstack/networking-bigswitch/commit/341e70514998e34158814c649f3935d84ce7c9f7 is not in 12.0.2, so please have a tag release for queens and rocky,\nThen the version can be bumped here, also need to create rocky-rdo branch as now stable/rocky is created upstream.",
+      "range": {
+        "startLine": 12,
+        "startChar": 16,
+        "endLine": 12,
+        "endChar": 22
+      },
+      "revId": "b0db681969e1fef41fb05dd0b5fceb79fb25ddb1",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
