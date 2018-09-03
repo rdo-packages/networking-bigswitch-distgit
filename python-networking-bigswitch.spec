@@ -9,8 +9,8 @@
 
 Name:           python-%{pypi_name}
 Epoch:          2
-Version:        XXX
-Release:        XXX
+Version:        13.0.0
+Release:        1%{?dist}
 Summary:        Big Switch Networks neutron plugin for OpenStack Networking
 License:        ASL 2.0
 URL:            https://pypi.python.org/pypi/%{pypi_name}
@@ -123,6 +123,9 @@ done
 %systemd_postun_with_restart neutron-bsn-lldp.service
 
 %changelog
+* Mon Sep 03 2018 RDO <dev@lists.rdoproject.org> 2:13.0.0-1
+- Update to 13.0.0
+
 
 
 
