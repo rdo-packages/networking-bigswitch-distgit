@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9abe1de1_2b88e8e6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 403
+      },
+      "writtenOn": "2018-09-03T04:59:00Z",
+      "side": 1,
+      "message": "Add below to Commit message:-\n(cherry picked from commit 578577c7a8839c203e45498ef4232410701df31b)",
+      "revId": "a073cdd94b4f1b793bb896c6239bc8d01a802f3e",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abe1de1_4b831ccd",
+        "filename": "python-networking-bigswitch.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 403
+      },
+      "writtenOn": "2018-09-03T04:59:00Z",
+      "side": 1,
+      "message": "This is not need as 12.0.3 is not build/going to be build in CBS: https://cbs.centos.org/koji/packageinfo?packageID\u003d1871,\nSo following changelog should be OK:-\n\n* Fri Aug 31 2018 Aditya Prakash Vaja \u003cwolverine.av@gmail.com\u003e 2:12.0.4-1\n- Revert OSP-119: move ivs port plug/unplug to separate os-vif plugin\n- OSP-184: update lldp script and plugin to support ovs-dpdk\n- Update to 12.0.4",
+      "range": {
+        "startLine": 128,
+        "startChar": 0,
+        "endLine": 128,
+        "endChar": 73
+      },
+      "revId": "a073cdd94b4f1b793bb896c6239bc8d01a802f3e",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
