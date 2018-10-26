@@ -16,6 +16,24 @@
       "revId": "a744172229c680d0bb14113b9672b9e2c883f295",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abe1de1_c60ffadf",
+        "filename": "python-networking-bigswitch.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 168
+      },
+      "writtenOn": "2018-10-26T19:35:08Z",
+      "side": 1,
+      "message": "That is part of the issue this package no longer provides that sub-package, it was dropping in https://review.rdoproject.org/r/gitweb?p\u003dopenstack/networking-bigswitch-distgit.git;a\u003dcommitdiff;h\u003d578577c7a8839c203e45498ef4232410701df31b",
+      "parentUuid": "9abe1de1_060612ce",
+      "revId": "a744172229c680d0bb14113b9672b9e2c883f295",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
     }
   ]
 }
