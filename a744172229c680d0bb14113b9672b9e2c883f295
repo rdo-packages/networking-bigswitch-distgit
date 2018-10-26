@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9abe1de1_060612ce",
+        "filename": "python-networking-bigswitch.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 87
+      },
+      "writtenOn": "2018-10-26T19:29:39Z",
+      "side": 1,
+      "message": "W: obsolete-not-provided openstack-neutron-bigswitch-vif-plugin-vis\n\nMissing provides",
+      "revId": "a744172229c680d0bb14113b9672b9e2c883f295",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
