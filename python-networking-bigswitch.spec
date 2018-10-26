@@ -33,6 +33,8 @@ Requires:       python2-oslo-utils >= 1.4.0
 Requires:       python2-oslo-messaging >= 1.8.0
 Requires:       python2-oslo-serialization >= 1.4.0
 
+Obsoletes: openstack-neutron-bigswitch-vif-plugin-vis < 2:12.0.4
+
 %{?systemd_requires}
 
 %description
