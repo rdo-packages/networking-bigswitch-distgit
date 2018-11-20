@@ -16,7 +16,6 @@ License:        ASL 2.0
 URL:            https://pypi.python.org/pypi/%{pypi_name}
 Source0:        https://pypi.io/packages/source/n/%{pypi_name}/%{pypi_name}-%{upstream_version}.tar.gz
 Source1:        neutron-bsn-agent.service
-Source2:        neutron-bsn-lldp.service
 BuildArch:      noarch
 
 BuildRequires:  python2-devel
@@ -48,15 +47,6 @@ Requires:       python-%{pypi_name} = %{epoch}:%{version}-%{release}
 
 This package contains the agent for security groups.
 
-%package -n %{rpm_prefix}-lldp
-Summary:        Neutron Big Switch Networks LLDP service
-Requires:       python-%{pypi_name} = %{epoch}:%{version}-%{release}
-
-%description -n %{rpm_prefix}-lldp
-%{common_desc}
-
-This package contains the LLDP agent.
-
 %package doc
 Summary:        Neutron Big Switch Networks plugin documentation
 
@@ -78,7 +68,6 @@ rm %{docpath}/.buildinfo
 %install
 %{__python2} setup.py install --skip-build --root %{buildroot}
 install -p -D -m 644 %{SOURCE1} %{buildroot}%{_unitdir}/neutron-bsn-agent.service
-install -p -D -m 644 %{SOURCE2} %{buildroot}%{_unitdir}/neutron-bsn-lldp.service
 mkdir -p %{buildroot}/%{_sysconfdir}/neutron/conf.d/neutron-bsn-agent
 mkdir -p %{lib_dir}/tests
 for lib in %{lib_dir}/version.py %{lib_dir}/tests/test_server.py; do
@@ -100,11 +89,6 @@ done
 %{_bindir}/neutron-bsn-agent
 %dir %{_sysconfdir}/neutron/conf.d/neutron-bsn-agent
 
-%files -n %{rpm_prefix}-lldp
-%license LICENSE
-%{_unitdir}/neutron-bsn-lldp.service
-%{_bindir}/bsnlldp
-
 %files doc
 %license LICENSE
 %doc README.rst
@@ -112,15 +96,12 @@ done
 
 %post
 %systemd_post neutron-bsn-agent.service
-%systemd_post neutron-bsn-lldp.service
 
 %preun
 %systemd_preun neutron-bsn-agent.service
-%systemd_preun neutron-bsn-lldp.service
 
 %postun
 %systemd_postun_with_restart neutron-bsn-agent.service
-%systemd_postun_with_restart neutron-bsn-lldp.service
 
 %changelog
 
