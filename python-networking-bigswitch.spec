@@ -32,7 +32,11 @@ Requires:       python2-oslo-utils >= 1.4.0
 Requires:       python2-oslo-messaging >= 1.8.0
 Requires:       python2-oslo-serialization >= 1.4.0
 
+%if 0%{?rhel} && 0%{?rhel} < 8
 %{?systemd_requires}
+%else
+%{?systemd_ordering} # does not exist on EL7
+%endif
 
 %description
 %{common_desc}
