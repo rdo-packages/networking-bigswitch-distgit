@@ -50,7 +50,11 @@ Requires:       python%{pyver}-oslo-utils >= 1.4.0
 Requires:       python%{pyver}-oslo-messaging >= 1.8.0
 Requires:       python%{pyver}-oslo-serialization >= 1.4.0
 
+%if 0%{?rhel} && 0%{?rhel} < 8
 %{?systemd_requires}
+%else
+%{?systemd_ordering} # does not exist on EL7
+%endif
 
 %description -n python%{pyver}-%{pypi_name}
 %{common_desc}
