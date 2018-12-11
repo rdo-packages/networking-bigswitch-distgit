@@ -1,9 +1,20 @@
+# Macros for py2/py3 compatibility
+%if 0%{?fedora} || 0%{?rhel} > 7
+%global pyver %{python3_pkgversion}
+%else
+%global pyver 2
+%endif
+%global pyver_bin python%{pyver}
+%global pyver_sitelib %python%{pyver}_sitelib
+%global pyver_install %py%{pyver}_install
+%global pyver_build %py%{pyver}_build
+# End of macros for py2/py3 compatibility
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 %global pypi_name networking-bigswitch
 %global module_name networking_bigswitch
 %global rpm_prefix openstack-neutron-bigswitch
 %global docpath doc/build/html
-%global lib_dir %{buildroot}%{python2_sitelib}/%{module_name}/plugins/bigswitch
+%global lib_dir %{buildroot}%{pyver_sitelib}/%{module_name}/plugins/bigswitch
 
 %global common_desc This package contains the Big Switch Networks Neutron plugins and agents
 
@@ -18,19 +29,23 @@ Source0:        https://pypi.io/packages/source/n/%{pypi_name}/%{pypi_name}-%{up
 Source1:        neutron-bsn-agent.service
 BuildArch:      noarch
 
-BuildRequires:  python2-devel
-BuildRequires:  python2-pbr
-BuildRequires:  python2-setuptools
-BuildRequires:  python2-sphinx
+BuildRequires:  python%{pyver}-devel
+BuildRequires:  python%{pyver}-pbr
+BuildRequires:  python%{pyver}-setuptools
+BuildRequires:  python%{pyver}-sphinx
 BuildRequires:  systemd
 
+%package -n python%{pyver}-%{pypi_name}
+Summary: Networking Bigswitch python library
+%{?python_provide:%python_provide python%{pyver}-%{pypi_name}}
+
 Requires:       openstack-neutron-common >= 1:7.0.0
-Requires:       python2-pbr >= 0.10.8
-Requires:       python2-oslo-log >= 1.0.0
-Requires:       python2-oslo-config >= 2:1.9.3
-Requires:       python2-oslo-utils >= 1.4.0
-Requires:       python2-oslo-messaging >= 1.8.0
-Requires:       python2-oslo-serialization >= 1.4.0
+Requires:       python%{pyver}-pbr >= 0.10.8
+Requires:       python%{pyver}-oslo-log >= 1.0.0
+Requires:       python%{pyver}-oslo-config >= 2:1.9.3
+Requires:       python%{pyver}-oslo-utils >= 1.4.0
+Requires:       python%{pyver}-oslo-messaging >= 1.8.0
+Requires:       python%{pyver}-oslo-serialization >= 1.4.0
 
 %{?systemd_requires}
 
@@ -40,7 +55,9 @@ Requires:       python2-oslo-serialization >= 1.4.0
 
 %package -n %{rpm_prefix}-agent
 Summary:        Neutron Big Switch Networks agent
-Requires:       python-%{pypi_name} = %{epoch}:%{version}-%{release}
+%{?python_provide:%python_provide python%{pyver}-%{pypi_name}}
+
+Requires:       python%{pyver}-%{pypi_name} = %{epoch}:%{version}-%{release}
 
 %description -n %{rpm_prefix}-agent
 %{common_desc}
@@ -49,6 +66,7 @@ This package contains the agent for security groups.
 
 %package doc
 Summary:        Neutron Big Switch Networks plugin documentation
+%{?python_provide:%python_provide python%{pyver}-%{pypi_name}}
 
 %description doc
 %{common_desc}
@@ -61,12 +79,12 @@ This package contains the documentation.
 %build
 export PBR_VERSION=%{version}
 export SKIP_PIP_INSTALL=1
-%{__python2} setup.py build
-%{__python2} setup.py build_sphinx
+%{pyver_bin} setup.py build
+%{pyver_bin} setup.py build_sphinx
 rm %{docpath}/.buildinfo
 
 %install
-%{__python2} setup.py install --skip-build --root %{buildroot}
+%{pyver_install}
 install -p -D -m 644 %{SOURCE1} %{buildroot}%{_unitdir}/neutron-bsn-agent.service
 mkdir -p %{buildroot}/%{_sysconfdir}/neutron/conf.d/neutron-bsn-agent
 mkdir -p %{lib_dir}/tests
@@ -78,8 +96,8 @@ done
 
 %files
 %license LICENSE
-%{python2_sitelib}/%{module_name}
-%{python2_sitelib}/*.egg-info
+%{pyver_sitelib}/%{module_name}
+%{pyver_sitelib}/*.egg-info
 
 %config %{_sysconfdir}/neutron/policy.d/bsn_plugin_policy.json
 
@@ -104,6 +122,3 @@ done
 %systemd_postun_with_restart neutron-bsn-agent.service
 
 %changelog
-
-
-
