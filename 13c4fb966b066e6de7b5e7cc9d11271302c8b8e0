@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9abe1de1_ad75eb98",
+        "filename": "python-networking-bigswitch.spec",
+        "patchSetId": 4
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 534
+      },
+      "writtenOn": "2018-12-11T11:47:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9abe1de1_4d240fae",
+      "range": {
+        "startLine": 61,
+        "startChar": 0,
+        "endLine": 61,
+        "endChar": 62
+      },
+      "revId": "13c4fb966b066e6de7b5e7cc9d11271302c8b8e0",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9abe1de1_0d3737e4",
         "filename": "python-networking-bigswitch.spec",
         "patchSetId": 4
@@ -36,6 +60,30 @@
       "writtenOn": "2018-12-11T11:42:58Z",
       "side": 1,
       "message": "this is python-networking-bigswitch-doc, unversioned python package, no need this provides.",
+      "range": {
+        "startLine": 72,
+        "startChar": 0,
+        "endLine": 72,
+        "endChar": 62
+      },
+      "revId": "13c4fb966b066e6de7b5e7cc9d11271302c8b8e0",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abe1de1_8d78e790",
+        "filename": "python-networking-bigswitch.spec",
+        "patchSetId": 4
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 534
+      },
+      "writtenOn": "2018-12-11T11:47:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9abe1de1_0d3737e4",
       "range": {
         "startLine": 72,
         "startChar": 0,
@@ -82,6 +130,30 @@
       "writtenOn": "2018-12-11T11:42:58Z",
       "side": 1,
       "message": "%files -p python%{pyver}-%{pypi_name}",
+      "range": {
+        "startLine": 100,
+        "startChar": 0,
+        "endLine": 100,
+        "endChar": 6
+      },
+      "revId": "13c4fb966b066e6de7b5e7cc9d11271302c8b8e0",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abe1de1_2d6afbb3",
+        "filename": "python-networking-bigswitch.spec",
+        "patchSetId": 4
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 534
+      },
+      "writtenOn": "2018-12-11T11:47:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9abe1de1_ad4e0b6d",
       "range": {
         "startLine": 100,
         "startChar": 0,
