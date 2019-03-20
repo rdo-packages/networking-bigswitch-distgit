@@ -31,8 +31,11 @@ BuildArch:      noarch
 
 BuildRequires:  python%{pyver}-devel
 BuildRequires:  python%{pyver}-pbr
+BuildRequires:  python%{pyver}-mock
+BuildRequires:  python%{pyver}-oslotest
 BuildRequires:  python%{pyver}-setuptools
 BuildRequires:  python%{pyver}-sphinx
+BuildRequires:  python%{pyver}-webob
 BuildRequires:  systemd
 
 %description
@@ -42,13 +45,29 @@ BuildRequires:  systemd
 Summary: Networking Bigswitch python library
 %{?python_provide:%python_provide python%{pyver}-%{pypi_name}}
 
-Requires:       openstack-neutron-common >= 1:7.0.0
+Requires:       openstack-neutron-common >= 1:12.0.0
+Requires:       os-net-config >= 10.0.0
+Requires:       python%{pyver}-alembic >= 1.0.0
+Requires:       python%{pyver}-distro >= 1.3.0
+Requires:       python%{pyver}-eventlet >= 0.24.1
+Requires:       python%{pyver}-keystoneauth1 >= 3.11.1
+Requires:       python%{pyver}-keystoneclient >= 3.18.0
+Requires:       python%{pyver}-neutron-lib >= 1.20.0
 Requires:       python%{pyver}-pbr >= 0.10.8
-Requires:       python%{pyver}-oslo-log >= 1.0.0
-Requires:       python%{pyver}-oslo-config >= 2:1.9.3
-Requires:       python%{pyver}-oslo-utils >= 1.4.0
-Requires:       python%{pyver}-oslo-messaging >= 1.8.0
-Requires:       python%{pyver}-oslo-serialization >= 1.4.0
+Requires:       python%{pyver}-oslo-log >= 3.40.1
+Requires:       python%{pyver}-oslo-config >= 2:6.7.0
+Requires:       python%{pyver}-oslo-utils >= 3.37.1
+Requires:       python%{pyver}-oslo-messaging >= 9.2.0
+Requires:       python%{pyver}-oslo-serialization >= 2.28.1
+Requires:       python%{pyver}-oslo-i18n >= 3.22.1
+Requires:       python%{pyver}-oslo-db >= 4.42.0
+Requires:       python%{pyver}-oslo-service >= 1.33.0
+Requires:       python%{pyver}-requests >= 2.18.4
+Requires:       python%{pyver}-setuptools >= 18.5
+Requires:       python%{pyver}-six >= 1.11.0
+Requires:       python%{pyver}-sqlalchemy >= 1.2.12
+Requires:       python%{pyver}-tap-as-a-service >= 3.0.0
+
 
 %if 0%{?rhel} && 0%{?rhel} < 8
 %{?systemd_requires}
