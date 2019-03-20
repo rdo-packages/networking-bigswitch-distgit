@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "05dc7095_19f83073",
+        "filename": "python-networking-bigswitch.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2019-03-20T11:21:10Z",
+      "side": 1,
+      "message": "fedora has 1.8.2. Anyway, we normally do not set specific versions in BuildRequires, let\u0027s try uncapping it and see if builds goes fine.\n\n[1] https://trunk.rdoproject.org/fedora/stable-base/latest/Packages/python3-webob-1.8.2-2.fc28.noarch.rpm",
+      "range": {
+        "startLine": 38,
+        "startChar": 39,
+        "endLine": 38,
+        "endChar": 45
+      },
+      "revId": "f21fbcce12562596b93719cfde58ab03c013536e",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
