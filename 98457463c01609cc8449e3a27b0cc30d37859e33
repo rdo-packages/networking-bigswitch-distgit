@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d6febf8b_484bfbd4",
+        "filename": "python-networking-bigswitch.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2019-03-20T10:08:12Z",
+      "side": 1,
+      "message": "in RPM termps the dependency on neutron python lib is openstack-neutron-common, not openstack-neutron.",
+      "range": {
+        "startLine": 47,
+        "startChar": 16,
+        "endLine": 47,
+        "endChar": 51
+      },
+      "revId": "98457463c01609cc8449e3a27b0cc30d37859e33",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c36ad5f7_31843eff",
+        "filename": "python-networking-bigswitch.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2019-03-20T10:08:12Z",
+      "side": 1,
+      "message": "This is just \"os-net-config\", without python%{pyver}",
+      "range": {
+        "startLine": 60,
+        "startChar": 16,
+        "endLine": 60,
+        "endChar": 44
+      },
+      "revId": "98457463c01609cc8449e3a27b0cc30d37859e33",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9d8e79b7_12a522cb",
+        "filename": "python-networking-bigswitch.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2019-03-20T10:08:12Z",
+      "side": 1,
+      "message": "Is oslotest required in runtime? that\u0027s weird. Looking at code, oslotest has been added to requirements.txt wrongly, it\u0027s only used in tests so let\u0027s get rid of it.",
+      "range": {
+        "startLine": 64,
+        "startChar": 31,
+        "endLine": 64,
+        "endChar": 39
+      },
+      "revId": "98457463c01609cc8449e3a27b0cc30d37859e33",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a69fee80_da989596",
+        "filename": "python-networking-bigswitch.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2019-03-20T10:08:12Z",
+      "side": 1,
+      "message": "it seems webob is only used in unit tests, not runtime. Wrongly in requirements.txt",
+      "range": {
+        "startLine": 70,
+        "startChar": 0,
+        "endLine": 70,
+        "endChar": 45
+      },
+      "revId": "98457463c01609cc8449e3a27b0cc30d37859e33",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
