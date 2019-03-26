@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4f512e75_36f73552",
+        "filename": "python-networking-bigswitch.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 85
+      },
+      "writtenOn": "2019-03-26T17:49:16Z",
+      "side": 1,
+      "message": "let\u0027s change that unconditionally, centos8 will have the same version",
+      "revId": "9bbb0df88c5f865838363838a067580d925dca26",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
