@@ -65,7 +65,11 @@ Requires:       python%{pyver}-oslo-service >= 1.33.0
 Requires:       python%{pyver}-requests >= 2.18.4
 Requires:       python%{pyver}-setuptools >= 18.5
 Requires:       python%{pyver}-six >= 1.11.0
-Requires:       python%{pyver}-sqlalchemy >= 1.2.12
+# https://github.com/openstack/networking-bigswitch/commit/206be47aa2eddeb4d908eeacec2d46cb0b16eb03
+# seems to introduce this, but there's no code in this commit which
+# shows anything 1.2.12-specific
+# RHEL8 has 1.2.8, so we should use this for now
+Requires:       python%{pyver}-sqlalchemy >= 1.2.8
 Requires:       python%{pyver}-tap-as-a-service >= 3.0.0
 
 
