@@ -22,6 +22,7 @@ BuildRequires:  python-pbr
 BuildRequires:  python-setuptools
 BuildRequires:  python-sphinx
 BuildRequires:  systemd-units
+BuildRequires:  git
 
 Requires:       openstack-neutron-common >= 1:7.0.0
 Requires:       python-pbr >= 0.10.8
@@ -62,7 +63,7 @@ This package contains the documentation for
 Big Switch Networks neutron plugins.
 
 %prep
-%setup -q -n %{pypi_name}-%{upstream_version}
+%autosetup -n %{pypi_name}-%{version} -S git
 
 %build
 export PBR_VERSION=%{version}
