@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "599b679b_55df2f80",
+        "filename": "python-networking-bigswitch.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 403
+      },
+      "writtenOn": "2019-05-17T15:14:51Z",
+      "side": 1,
+      "message": "why changed this?",
+      "range": {
+        "startLine": 106,
+        "startChar": 29,
+        "endLine": 106,
+        "endChar": 36
+      },
+      "revId": "9ba789b1c61cf6f28b9e7da769072753f6f7ad4a",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
