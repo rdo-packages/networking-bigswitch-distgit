@@ -37,6 +37,7 @@ BuildRequires:  python%{pyver}-setuptools
 BuildRequires:  python%{pyver}-sphinx
 BuildRequires:  python%{pyver}-webob
 BuildRequires:  systemd
+BuildRequires:  git
 
 %description
 %{common_desc}
@@ -102,7 +103,7 @@ Summary:        Neutron Big Switch Networks plugin documentation
 This package contains the documentation.
 
 %prep
-%setup -q -n %{pypi_name}-%{upstream_version}
+%autosetup -n %{pypi_name}-%{version} -S git
 
 %build
 export PBR_VERSION=%{version}
