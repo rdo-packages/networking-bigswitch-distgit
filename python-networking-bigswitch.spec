@@ -15,6 +15,7 @@
 %global rpm_prefix openstack-neutron-bigswitch
 %global docpath doc/build/html
 %global lib_dir %{buildroot}%{pyver_sitelib}/%{module_name}/plugins/bigswitch
+%global with_doc 1
 
 %global common_desc This package contains the Big Switch Networks Neutron plugins and agents
 
@@ -34,7 +35,6 @@ BuildRequires:  python%{pyver}-pbr
 BuildRequires:  python%{pyver}-mock
 BuildRequires:  python%{pyver}-oslotest
 BuildRequires:  python%{pyver}-setuptools
-BuildRequires:  python%{pyver}-sphinx
 BuildRequires:  python%{pyver}-webob
 BuildRequires:  systemd
 BuildRequires:  git
@@ -94,13 +94,17 @@ Requires:       python%{pyver}-%{pypi_name} = %{epoch}:%{version}-%{release}
 
 This package contains the agent for security groups.
 
+%if 0%{?with_doc}
 %package doc
 Summary:        Neutron Big Switch Networks plugin documentation
+
+BuildRequires:  python%{pyver}-sphinx
 
 %description doc
 %{common_desc}
 
 This package contains the documentation.
+%endif
 
 %prep
 %autosetup -n %{pypi_name}-%{upstream_version} -S git
@@ -109,8 +113,11 @@ This package contains the documentation.
 export PBR_VERSION=%{version}
 export SKIP_PIP_INSTALL=1
 %{pyver_build}
+
+%if 0%{?with_doc}
 %{pyver_bin} setup.py build_sphinx
 rm %{docpath}/.buildinfo
+%endif
 
 %install
 %{pyver_install}
@@ -136,10 +143,12 @@ done
 %{_bindir}/neutron-bsn-agent
 %dir %{_sysconfdir}/neutron/conf.d/neutron-bsn-agent
 
+%if 0%{?with_doc}
 %files doc
 %license LICENSE
 %doc README.rst
 %doc %{docpath}
+%endif
 
 %post
 %systemd_post neutron-bsn-agent.service
