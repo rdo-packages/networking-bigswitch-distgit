@@ -46,14 +46,14 @@ BuildRequires:  git
 Summary: Networking Bigswitch python library
 %{?python_provide:%python_provide python%{pyver}-%{pypi_name}}
 
-Requires:       openstack-neutron-common >= 1:12.0.0
+Requires:       openstack-neutron-common >= 1:13.0.0
 Requires:       os-net-config >= 10.0.0
 Requires:       python%{pyver}-alembic >= 1.0.0
 Requires:       python%{pyver}-distro >= 1.3.0
 Requires:       python%{pyver}-eventlet >= 0.24.1
 Requires:       python%{pyver}-keystoneauth1 >= 3.11.1
 Requires:       python%{pyver}-keystoneclient >= 3.18.0
-Requires:       python%{pyver}-neutron-lib >= 1.20.0
+Requires:       python%{pyver}-neutron-lib >= 1.22.0
 Requires:       python%{pyver}-pbr >= 0.10.8
 Requires:       python%{pyver}-oslo-log >= 3.40.1
 Requires:       python%{pyver}-oslo-config >= 2:6.7.0
@@ -65,13 +65,11 @@ Requires:       python%{pyver}-oslo-db >= 4.42.0
 Requires:       python%{pyver}-oslo-service >= 1.33.0
 Requires:       python%{pyver}-requests >= 2.18.4
 Requires:       python%{pyver}-setuptools >= 18.5
-Requires:       python%{pyver}-six >= 1.11.0
 # https://github.com/openstack/networking-bigswitch/commit/206be47aa2eddeb4d908eeacec2d46cb0b16eb03
 # seems to introduce this, but there's no code in this commit which
 # shows anything 1.2.12-specific
 # RHEL8 has 1.2.8, so we should use this for now
-Requires:       python%{pyver}-sqlalchemy >= 1.2.8
-Requires:       python%{pyver}-tap-as-a-service >= 3.0.0
+Requires:       python%{pyver}-sqlalchemy >= 1.2.12
 
 
 %if 0%{?rhel} && 0%{?rhel} < 8
