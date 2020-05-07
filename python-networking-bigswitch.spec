@@ -1,4 +1,4 @@
-%{!?upstream_version: %global upstream_version %{version}%{?milestone}}
+%{!?upstream_version: %global upstream_version %{version}}
 %global pypi_name networking-bigswitch
 %global module_name networking_bigswitch
 %global rpm_prefix openstack-neutron-bigswitch
@@ -10,12 +10,12 @@
 
 Name:           python-%{pypi_name}
 Epoch:          2
-Version:        XXX
-Release:        XXX
+Version:        12.0.14
+Release:        1%{?dist}
 Summary:        Big Switch Networks neutron plugin for OpenStack Networking
 License:        ASL 2.0
 URL:            https://pypi.python.org/pypi/%{pypi_name}
-Source0:        https://pypi.io/packages/source/n/%{pypi_name}/%{pypi_name}-%{upstream_version}.tar.gz
+Source0:        https://tarballs.opendev.org/x/%{pypi_name}/%{pypi_name}-%{upstream_version}.tar.gz
 Source1:        neutron-bsn-agent.service
 BuildArch:      noarch
 
@@ -147,3 +147,6 @@ done
 %systemd_postun_with_restart neutron-bsn-agent.service
 
 %changelog
+* Thu May 07 2020 RDO <dev@lists.rdoproject.org> 2:12.0.14-1
+- Update to 12.0.14
+
