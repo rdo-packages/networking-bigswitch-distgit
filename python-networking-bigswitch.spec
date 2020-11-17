@@ -26,7 +26,7 @@ BuildRequires:  python3-oslotest
 BuildRequires:  python3-setuptools
 BuildRequires:  python3-webob
 BuildRequires:  systemd
-BuildRequires:  git
+BuildRequires:  git-core
 
 %description
 %{common_desc}
