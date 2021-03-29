@@ -160,3 +160,4 @@ done
 %systemd_postun_with_restart neutron-bsn-agent.service
 
 %changelog
+# REMOVEME: error caused by commit https://opendev.org/openstack/networking-bigswitch/commit/ecdecbe3d66a5eaadf02e1bc6c07266d049bd9f4
