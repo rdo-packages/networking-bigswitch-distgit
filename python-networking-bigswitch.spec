@@ -59,6 +59,7 @@ Requires:       python3-setuptools >= 18.5
 # shows anything 1.2.12-specific
 # RHEL8 has 1.2.8, so we should use this for now
 Requires:       python3-sqlalchemy >= 1.2.12
+Requires:       python3-sqlalchemy < 1.4.0
 
 
 %if 0%{?rhel} && 0%{?rhel} < 8
