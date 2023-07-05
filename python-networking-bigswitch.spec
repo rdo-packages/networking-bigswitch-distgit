@@ -1,4 +1,10 @@
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
+# we are excluding some BRs from automatic generator
+%global excluded_brs doc8 bandit pre-commit hacking flake8-import-order
+# Exclude sphinx from BRs if docs are disabled
+%if ! 0%{?with_doc}
+%global excluded_brs %{excluded_brs} sphinx openstackdocstheme
+%endif
 %global pypi_name networking-bigswitch
 %global module_name networking_bigswitch
 %global rpm_prefix openstack-neutron-bigswitch
@@ -13,18 +19,14 @@ Epoch:          2
 Version:        XXX
 Release:        XXX
 Summary:        Big Switch Networks neutron plugin for OpenStack Networking
-License:        ASL 2.0
+License:        Apache-2.0
 URL:            https://pypi.python.org/pypi/%{pypi_name}
 Source0:        https://pypi.io/packages/source/n/%{pypi_name}/%{pypi_name}-%{upstream_version}.tar.gz
 Source1:        neutron-bsn-agent.service
 BuildArch:      noarch
 
 BuildRequires:  python3-devel
-BuildRequires:  python3-pbr
-BuildRequires:  python3-mock
-BuildRequires:  python3-oslotest
-BuildRequires:  python3-setuptools
-BuildRequires:  python3-webob
+BuildRequires:  pyproject-rpm-macros
 BuildRequires:  systemd
 BuildRequires:  git-core
 
@@ -33,33 +35,9 @@ BuildRequires:  git-core
 
 %package -n python3-%{pypi_name}
 Summary: Networking Bigswitch python library
-%{?python_provide:%python_provide python3-%{pypi_name}}
 
 Requires:       openstack-neutron-common >= 1:13.0.0
 Requires:       os-net-config >= 10.0.0
-Requires:       python3-alembic >= 1.0.0
-Requires:       python3-distro >= 1.3.0
-Requires:       python3-eventlet >= 0.24.1
-Requires:       python3-keystoneauth1 >= 3.11.1
-Requires:       python3-keystoneclient >= 3.18.0
-Requires:       python3-neutron-lib >= 1.22.0
-Requires:       python3-pbr >= 0.10.8
-Requires:       python3-oslo-log >= 3.40.1
-Requires:       python3-oslo-config >= 2:6.7.0
-Requires:       python3-oslo-utils >= 3.37.1
-Requires:       python3-oslo-messaging >= 9.2.0
-Requires:       python3-oslo-serialization >= 2.28.1
-Requires:       python3-oslo-i18n >= 3.22.1
-Requires:       python3-oslo-db >= 4.42.0
-Requires:       python3-oslo-service >= 1.33.0
-Requires:       python3-requests >= 2.18.4
-Requires:       python3-setuptools >= 18.5
-# https://github.com/openstack/networking-bigswitch/commit/206be47aa2eddeb4d908eeacec2d46cb0b16eb03
-# seems to introduce this, but there's no code in this commit which
-# shows anything 1.2.12-specific
-# RHEL8 has 1.2.8, so we should use this for now
-Requires:       python3-sqlalchemy >= 1.2.12
-
 
 %if 0%{?rhel} && 0%{?rhel} < 8
 %{?systemd_requires}
@@ -85,8 +63,6 @@ This package contains the agent for security groups.
 %package doc
 Summary:        Neutron Big Switch Networks plugin documentation
 
-BuildRequires:  python3-sphinx
-
 %description doc
 %{common_desc}
 
@@ -96,10 +72,30 @@ This package contains the documentation.
 %prep
 %autosetup -n %{pypi_name}-%{upstream_version} -S git
 
+sed -i /^[[:space:]]*-c{env:.*_CONSTRAINTS_FILE.*/d tox.ini
+sed -i "s/^deps = -c{env:.*_CONSTRAINTS_FILE.*/deps =/" tox.ini
+sed -i /^minversion.*/d tox.ini
+sed -i /^requires.*virtualenv.*/d tox.ini
+
+# Exclude some bad-known BRs
+for pkg in %{excluded_brs}; do
+  for reqfile in doc/requirements.txt test-requirements.txt; do
+    if [ -f $reqfile ]; then
+      sed -i /^${pkg}.*/d $reqfile
+    fi
+  done
+done
+
+# Automatic BR generation
+%generate_buildrequires
+%if 0%{?with_doc}
+  %pyproject_buildrequires -t -e %{default_toxenv},docs
+%else
+  %pyproject_buildrequires -t -e %{default_toxenv}
+%endif
+
 %build
-export PBR_VERSION=%{version}
-export SKIP_PIP_INSTALL=1
-%{py3_build}
+%pyproject_wheel
 
 %if 0%{?with_doc}
 %{__python3} setup.py build_sphinx
@@ -107,7 +103,7 @@ rm %{docpath}/.buildinfo
 %endif
 
 %install
-%{py3_install}
+%pyproject_install
 install -p -D -m 644 %{SOURCE1} %{buildroot}%{_unitdir}/neutron-bsn-agent.service
 mkdir -p %{buildroot}/%{_sysconfdir}/neutron/conf.d/neutron-bsn-agent
 mkdir -p %{lib_dir}/tests
@@ -120,7 +116,7 @@ done
 %files -n python3-%{pypi_name}
 %license LICENSE
 %{python3_sitelib}/%{module_name}
-%{python3_sitelib}/*.egg-info
+%{python3_sitelib}/*.dist-info
 
 %config %{_sysconfdir}/neutron/policy.d/bsn_plugin_policy.json
 
